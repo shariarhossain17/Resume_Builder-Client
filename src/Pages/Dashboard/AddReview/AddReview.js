@@ -4,12 +4,14 @@ import toast from "react-hot-toast";
 import ReactStars from "react-rating-stars-component";
 import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
+import UserInformation from "../../../Hook/UserInformation";
 import axiosPrivate from "../../Api/axiosPrivate";
 
 const AddReview = () => {
   const [user] = useAuthState(auth);
   const [feedBack, setFeedBack] = useState("");
   const [rating, setRating] = useState("");
+  const [users] = UserInformation(user)
   const addRating = (newRating) => {
     setRating(newRating);
   };
@@ -20,7 +22,7 @@ const AddReview = () => {
         name: user?.displayName,
         feedback: feedBack,
         star: rating,
-        img:""
+        img:users.img
       };
       axiosPrivate.post(`/reviews`, review).then((res) => {
         if (res.data.acknowledged === true) {

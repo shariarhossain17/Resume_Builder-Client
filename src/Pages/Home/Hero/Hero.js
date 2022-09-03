@@ -32,9 +32,9 @@ const hero = () => {
             data-aos-duration="2000"
             className="max-w-lg mt-7 text-left md:text-[17px] poppins-t text-gray-600 "
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            quis cumque minus, officiis odio obcaecati! Lorem ipsum dolor sit
-            amet consectetur adipisicing.
+            Resume writing can be stressful, confusing, and time-consuming if
+            you do it all on your own. With our Resume Maker, it’s quick,
+            pain-free, and effective.
           </p>
 
           <div

@@ -47,14 +47,14 @@ const CoverLetterTemplate = () => {
         </div>
       </div>
       <div className="lg:w-[65%] md:w-[90%] w-[95%] mx-auto bg-white shadow-md">
-        <div ref={componentRef} className="lg:p-16 md:p-12 p-5">
+        <div ref={componentRef} className=" p-[8%]">
           <div
             contentEditable
             className="p-3 border-0 focus:border-[1px] outline-none border-green-600 rounded-md focus:bg-gray-100"
           >
-            <h2 className="text-3xl poppins-r text-gray-700">{name}</h2>
+            <h2 className="text-3xl poppins-r text-blue-700">{name}</h2>
             <h4 className="text-lg poppins-r text-gray-600">{jobRole}</h4>
-            <div className="flex gap-5 my-2 text-[13px] poppins-t">
+            <div className="md:flex flex-wrap gap-5 my-2 text-[13px] poppins-t">
               <p className="flex gap-1 place-items-center">
                 <HiPhone /> {phone}
               </p>

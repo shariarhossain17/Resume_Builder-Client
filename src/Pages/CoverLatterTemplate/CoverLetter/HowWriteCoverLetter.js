@@ -39,7 +39,7 @@ const HowWriteCoverLetter = () => {
         <div
           data-aos="zoom-in-left"
           data-aos-duration="2000"
-          onClick={() => navigate("/resume-builder/drag-and-drop-file")}
+          onClick={() => navigate("/coverLetter-example")}
           class=" card hover:shadow-2xl bg-base-100  rounded-1xl border-[1px] border-gray-300 hover:border-green-500 w-[280px] h-[240px] cursor-pointergit p-8 cursor-pointer"
         >
           <img className="w-20 mx-auto" src={example} alt="example img" />

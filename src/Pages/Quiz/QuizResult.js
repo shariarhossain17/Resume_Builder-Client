@@ -52,7 +52,7 @@ const QuizResult = () => {
                 Back to home
               </Link>{" "}
               <Link
-                to="/dashboard/leader-board"
+                to="/dashboard/leaderBoard"
                 className="py-3 text-white font-medium px-5 rounded-md bg-blue-700 hover:bg-blue-900"
               >
                 See leaderBoard

@@ -13,24 +13,26 @@ const AllUser = () => {
   const [searchValue, setSearcValue] = useState("");
 
   const { data, isLoading, refetch } = useQuery(["all-user"], () => {
-    axiosPrivate.get(`/all-users`)
-    .then(response  => {
-      setUsers(response.data);
-    }, (err) => {
-        if(err.response.status === 401 || err.response.status){
-            signOut(auth)
-            Navigate("/")
-            localStorage.removeItem("userToken")
+    axiosPrivate.get(`/all-users`).then(
+      (response) => {
+        setUsers(response.data);
+      },
+      (err) => {
+        if (err.response.status === 401 || err.response.status) {
+          signOut(auth);
+          Navigate("/");
+          localStorage.removeItem("userToken");
         }
-    })
+      }
+    );
   });
+
 
   const handleSearch = (e) => {
     e.preventDefault();
     axiosPrivate.get(`/all-users?email=${searchValue}`).then((response) => {
       setUsers(response.data);
-    })
-    
+    });
   };
 
   if (isLoading) {
@@ -85,13 +87,20 @@ const AllUser = () => {
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <AlluserTable key={user._id} user={user} index={index} refetch={refetch} />
+                <AlluserTable
+                  key={user._id}
+                  user={user}
+                  index={index}
+                  refetch={refetch}
+                />
               ))}
             </tbody>
           </table>
         </div>
       </div>
-      <SetRoleModal/>
+      <div>
+      </div>
+      <SetRoleModal />
     </div>
   );
 };

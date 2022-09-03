@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const CareerPaymentSystem = ({ service }) => {
-  const { serviceName, price } = service;
+  const { serviceName, price,_id } = service;
   const [userInfo, setUserinfo] = useState({})
   return (
     <div>
@@ -34,7 +34,7 @@ const CareerPaymentSystem = ({ service }) => {
           Billing & Payment
         </h4>
       </div>
-      <Outlet context={[userInfo, setUserinfo, price, serviceName]} />
+      <Outlet context={[userInfo, setUserinfo, price, serviceName,_id]} />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { BsChatLeftText } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
-import { MdOutlineEdit, MdReviews } from "react-icons/md";
+import { MdLeaderboard, MdOutlineEdit, MdReviews } from "react-icons/md";
 import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
 import { Outlet } from "react-router-dom";
 import "../../../Css/CarrerCounceling.css";
@@ -24,7 +24,7 @@ const Dashboard = () => {
   const [users] = UserInformation(user);
   return (
     <>
-    <DashBoardHeader/>
+      <DashBoardHeader />
       <div class="drawer drawer-mobile  bg-[#f6f5f8]">
         <input id="dashboard-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll  ">
@@ -136,6 +136,16 @@ const Dashboard = () => {
                   <span className="uppercase font-bold text-gray-700">
                     {" "}
                     Order History
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/leaderBoard"
+                >
+                  <MdLeaderboard className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
+                    Leader Board
                   </span>
                 </DashboardCustomLink>
                 <DashboardCustomLink

@@ -12,9 +12,9 @@ const CheckoutForm = () => {
   const [cardError, setCarderror] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
-  const [userInfo, setUserinfo, price, serviceName] = useOutletContext();
+  const [userInfo, setUserinfo, price, serviceName,_id] = useOutletContext();
   const navigate = useNavigate();
-
+  console.log(_id);
 //   time
   const today = new Date();
   const date =
@@ -107,9 +107,10 @@ const CheckoutForm = () => {
         axiosPrivate.post("/booking", paymentDetails).then((res) => {
             setProcessing(false);
         });
+        navigate(`/resume-builder/career-counselling/${_id}/download-invoice`);
       }
     } else {
-      navigate("/resume-builder/career-counselling/62f0b75472d55b6e96f197d2");
+      navigate(`/resume-builder/career-counselling/${_id}`);
     }
   };
 

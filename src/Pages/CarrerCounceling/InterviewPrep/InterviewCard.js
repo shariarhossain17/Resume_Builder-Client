@@ -8,7 +8,7 @@ const InterviewCard = ({ interview }) => {
   const navigate = useNavigate();
   return (
     <div className="md:w-[500px] mx-auto  ">
-      <div className="blog_post p-10 h-[350px] md:h-[300px] mt-8 md:mt-4 ">
+      <div className="blog_post p-10 h-[350px] md:h-[300px] mt-12">
         <div className="img_pod">
           {img ? (
             <div class="avatar">

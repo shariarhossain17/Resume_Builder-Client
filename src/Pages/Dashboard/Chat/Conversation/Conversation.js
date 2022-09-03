@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import demoUser from '../../../../assets/demo_user.png';
 import axiosPrivate from "../../../Api/axiosPrivate";
 
 const Conversation = ({ data, currentUserId}) => {
@@ -9,7 +10,6 @@ const Conversation = ({ data, currentUserId}) => {
     const getUserData = async () => {
       try {
         axiosPrivate.get(`/conversationuser/${userId}`).then((res) => {
-          console.log(res.data);
           setUserData(res.data);
         });
       } catch (error) {
@@ -21,7 +21,7 @@ const Conversation = ({ data, currentUserId}) => {
   }, []);
   return (
     <>
-      <div className="follower conversation">
+      <div className="follower conversation shadow-sm">
         <div className="flex items-center">
           {userData?.img ? (
             <div class="avatar rounded-full">
@@ -31,8 +31,8 @@ const Conversation = ({ data, currentUserId}) => {
             </div>
           ) : (
             <div class="avatar rounded-full">
-              <div class="w-12 rounded-full">
-                <img src="https://placeimg.com/192/192/people" alt=""/>
+              <div class="w-6 rounded-full">
+                <img src={demoUser} alt=""/>
               </div>
             </div>
           )}

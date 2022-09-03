@@ -4,13 +4,13 @@ import { BiEdit } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
 
 const MyblogCard = ({ blog, setBlogId }) => {
-  const { blogType, title, blog: text, _id } = blog;
+  const { blogType, title, blog: text, _id,likes } = blog;
   const [isOpen,setOpen] = useState(false)
   const navigate = useNavigate();
 
   return (
     <div>
-      <div class="card max-w-sm h-[100%] bg-base-100 shadow-xl mt-4">
+      <div class="card max-w-sm h-[100%] bg-base-100 shadow-sm mt-4">
         <div class="card-body">
           <h2 className="text-xl font-bold">{blogType}</h2>
           <h2 class="card-title">{title}</h2>
@@ -21,6 +21,7 @@ const MyblogCard = ({ blog, setBlogId }) => {
              <span onClick={()=>setOpen(!isOpen)} className="text-[#3f66da] font-bold">{isOpen ? "see less" :"see more..."}   </span>   </span>
               :text}
               </p>
+              <p className="font-bold">likes:{likes.length}</p>
           <div class="card-actions justify-end">
             <BiEdit onClick={() => navigate(`/dashboard/edit-blog-post/${_id}`)} className="text-2xl text-[#f7a000] mr-2" />
             <label onClick={() => setBlogId(_id)} for="blog-delete-modal">
